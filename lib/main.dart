@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:barcode_scan/barcode_scan.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
@@ -46,19 +47,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  String result = "Hey there !";
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  Future _scanQR() async{
+    try{
+      String qrResult = await BarcodeScanner.scan();
+      setState(() {
+        result = qrResult;
+      });
+    }on PlatformException catch(ex){
+      if(ex.code == BarcodeScanner.CameraAccessDenied) {
+        setState(() {
+          result = "Camera permission denied";
+        });
+      }
+      else{
+        setState(() {
+          result = "Unknown error $ex";
+        });
+      }
+    } on FormatException{
+      setState(() {
+        result = "You pressed the back button";
+      });
+    } catch(ex) {
+      setState(() {
+        result = "Unknown error $ex";
+      });
+    }
   }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -72,14 +89,12 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text("QR Scanner")
       ),
       body: Center(
-          child: Text("Hey")
+          child: Text(result)
       ),
       floatingActionButton: FloatingActionButton.extended(
         icon: Icon(Icons.camera_alt),
         label: Text("Scan"),
-        onPressed: (){
-          _scanQR,
-        },
+        onPressed: _scanQR,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
