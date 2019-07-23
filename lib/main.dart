@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/services.dart';
@@ -52,9 +55,22 @@ class _MyHomePageState extends State<MyHomePage> {
   Future _scanQR() async{
     try{
       String qrResult = await BarcodeScanner.scan();
+      var request = await HttpClient().getUrl(Uri.parse("https://jsonplaceholder.typicode.com/todos/1"));
+
+      var response = await request.close();
+      var x;
+
+      await for(var contents in response.transform(Utf8Decoder()))
+        {
+          x =contents;
+        }
+      setState(() {
+        result = x;
+      });
+      /*return new MaterialApp();
       setState(() {
         result = qrResult;
-      });
+      });*/
     }on PlatformException catch(ex){
       if(ex.code == BarcodeScanner.CameraAccessDenied) {
         setState(() {
