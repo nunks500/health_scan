@@ -1,0 +1,6 @@
+C:\Users\JoelDinis\IdeaProjects\health_scan\Backend\healthscan_BE\healthscan_BE\obj\Debug\netcoreapp2.2\healthscan_BE.csprojAssemblyReference.cache
+C:\Users\JoelDinis\IdeaProjects\health_scan\Backend\healthscan_BE\healthscan_BE\obj\Debug\netcoreapp2.2\healthscan_BE.csproj.CoreCompileInputs.cache
+C:\Users\JoelDinis\IdeaProjects\health_scan\Backend\healthscan_BE\healthscan_BE\obj\Debug\netcoreapp2.2\healthscan_BE.RazorAssemblyInfo.cache
+C:\Users\JoelDinis\IdeaProjects\health_scan\Backend\healthscan_BE\healthscan_BE\obj\Debug\netcoreapp2.2\healthscan_BE.RazorAssemblyInfo.cs
+C:\Users\JoelDinis\IdeaProjects\health_scan\Backend\healthscan_BE\healthscan_BE\obj\Debug\netcoreapp2.2\healthscan_BE.AssemblyInfoInputs.cache
+C:\Users\JoelDinis\IdeaProjects\health_scan\Backend\healthscan_BE\healthscan_BE\obj\Debug\netcoreapp2.2\healthscan_BE.AssemblyInfo.cs
