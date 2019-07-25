@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 
 namespace healthscan_BE.Enums
 {
+    [Flags]
     public enum ToxicityLevels
     {
-        Low,
-        Medium,
-        High,
-        Hazardous
+        None = 0,
+        Low = 1,
+        Medium = 2,
+        High = 4,
+        Hazardous = 8,
     }
 }
