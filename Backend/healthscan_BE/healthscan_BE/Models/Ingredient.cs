@@ -6,11 +6,13 @@
 
     public class Ingredient
     {
+        [Key]
         [Required]
         [JsonProperty(PropertyName = "id")]
         public string Id { get; internal set; }
 
         [Required]
+        [StringLength(100)]
         [JsonProperty(PropertyName = "name")]
         public string Name { get; internal set; }
 

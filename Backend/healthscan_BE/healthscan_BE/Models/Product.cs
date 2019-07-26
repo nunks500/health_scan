@@ -7,6 +7,7 @@
     public class Product
     {
         [Required]
+        [StringLength(100)]
         [JsonProperty(PropertyName = "name")]
         public string Name { get; internal set; }
 
@@ -14,6 +15,7 @@
         [JsonProperty(PropertyName = "barcodeId")]
         public int BarcodeNumber { get; internal set; }
 
+        [Key]
         [Required]
         [JsonProperty(PropertyName = "id")]
         public int Id { get; internal set; }
