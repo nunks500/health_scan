@@ -15,9 +15,9 @@ namespace healthscan_BE.Controllers
         // GET api/values/5
         [HttpGet("{id}")]
         [AllowAnonymous]
-        public ActionResult<Product> Get(int barcodeId)
+        public Product Get(int barcodeId)
         {
-            return null;
+            return GetProductByBarcode(barcodeId);
         }
 
         // POST api/values
