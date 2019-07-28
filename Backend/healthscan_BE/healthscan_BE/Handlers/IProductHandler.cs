@@ -8,6 +8,6 @@ namespace healthscan_BE.Handlers
 {
     public interface IProductHandler
     {
-        Product GetProductByBarcode(int barcodeId);
+        Task<Product> GetProductByBarcode(int barcodeId);
     }
 }

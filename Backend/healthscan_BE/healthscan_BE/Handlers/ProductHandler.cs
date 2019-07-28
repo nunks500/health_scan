@@ -8,7 +8,7 @@ namespace healthscan_BE.Handlers
 {
     public class ProductHandler : IProductHandler
     {
-        public Product GetProductByBarcode(int barcodeId)
+        public async Task<Product> GetProductByBarcode(int barcodeId)
         {
             return null;
         }

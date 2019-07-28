@@ -29,6 +29,9 @@
 .pub/
 /build/
 
+# C related
+/Backend/healthscan_BE/.vs/
+
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle

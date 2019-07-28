@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using healthscan_BE.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,7 @@ namespace healthscan_BE
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=TestDatabase.db", options =>
-            {
-                options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
-            });
-
+            optionsBuilder.UseSqlite("Filename=Database.db", options => options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName));
 
             base.OnConfiguring(optionsBuilder);
         }
@@ -23,16 +20,18 @@ namespace healthscan_BE
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Map table names
-            /*modelBuilder.Entity<Blog>().ToTable("Blogs", "test");
-            modelBuilder.Entity<Blog>(entity =>
+            modelBuilder.Entity<Product>().ToTable("Products", "HealthScanDB");
+            modelBuilder.Entity<Ingredient>().ToTable("Ingredients", "HealthScanDB");
+
+            /*modelBuilder.Entity<Blog>(entity =>
             {
                 entity.HasKey(e => e.BlogId);
                 entity.HasIndex(e => e.Title).IsUnique();
                 entity.Property(e => e.DateTimeAdd).HasDefaultValueSql("CURRENT_TIMESTAMP");
             });
+            */
 
-
-            base.OnModelCreating(modelBuilder);*/
+            base.OnModelCreating(modelBuilder);
         }
 
 

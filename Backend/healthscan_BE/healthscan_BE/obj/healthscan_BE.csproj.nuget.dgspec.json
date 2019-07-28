@@ -42,6 +42,18 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Alexinea.Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "Autofac": {
+              "target": "Package",
+              "version": "[4.9.3, )"
+            },
+            "Autofac.Mvc5": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -61,7 +73,7 @@
               "target": "Package",
               "version": "[2.2.6, )"
             },
-            "Microsoft.EntityFrameworkCore.Sqlite.Core": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[2.2.6, )"
             },
