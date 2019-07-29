@@ -23,9 +23,9 @@ namespace healthscan_BE.Controllers
         // GET api/values/5
         [HttpGet("{id}")]
         [AllowAnonymous]
-        public async Task<Product> Get(int barcodeId)
+        public Product Get(int barcodeId)
         {
-             return await this.productHandler.GetProductByBarcode(barcodeId);
+             return this.productHandler.GetProductByBarcode(barcodeId);
         }
 
         // POST api/values

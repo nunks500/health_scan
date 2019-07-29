@@ -10,6 +10,9 @@ namespace healthscan_BE
 {
     public class ContextDB : DbContext
     {
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Filename=Database.db", options => options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName));
@@ -22,6 +25,8 @@ namespace healthscan_BE
             // Map table names
             modelBuilder.Entity<Product>().ToTable("Products", "HealthScanDB");
             modelBuilder.Entity<Ingredient>().ToTable("Ingredients", "HealthScanDB");
+
+            modelBuilder.Entity<Product>(entity => entity.HasIndex(e => e.BarcodeNumber).IsUnique());
 
             /*modelBuilder.Entity<Blog>(entity =>
             {
