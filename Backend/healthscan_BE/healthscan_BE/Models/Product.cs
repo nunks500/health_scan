@@ -22,6 +22,6 @@
 
         [Required]
         [JsonProperty(PropertyName = "listIngredients")]
-        public IList<Ingredient> ListIngredients { get; internal set; }
+        public IEnumerable<Ingredient> ListIngredients { get; internal set; }
     }
 }

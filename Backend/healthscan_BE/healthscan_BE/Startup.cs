@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Alexinea.Autofac.Extensions.DependencyInjection;
 using Autofac;
 using healthscan_BE.Handlers;
+using healthscan_BE.Mocks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,8 @@ namespace healthscan_BE
                 //Create the database tables defined in SimpleDataStorage
                 client.Database.Migrate();
             }
+
+            ProductMock.CreateMocks();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
