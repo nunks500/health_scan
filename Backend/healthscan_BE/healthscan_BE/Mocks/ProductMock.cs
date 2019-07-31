@@ -1,5 +1,6 @@
 ﻿using healthscan_BE.Builder;
 using healthscan_BE.Enums;
+using healthscan_BE.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace healthscan_BE.Mocks
 
         private static void BuildMockProducts()
         {
-            throw new NotImplementedException();
+            //new ProductsBuilder("ProductA", 1 , new List<Ingredient> { })
         }
     }
 }
